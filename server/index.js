@@ -1,29 +1,26 @@
 const express = require('express');
 require('dotenv').config();
-const authRoutes=require("./src/routes/userRoutes")
+const authRoutes = require("./src/routes/userRoutes");
+const { connection } = require("./src/configs/db");
 
 const app = express();
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-    console.log("Method:", req.method, req.url);
-    next();
-  });
-  // Routes
-  app.get("/", (req, res) => {
-    res.send("WELCOME TO SERVER...!");
-  });  
-// Applying verifyToken middleware to routes that require authentication
+// Routes
+app.get("/", (req, res) => {
+  res.send("WELCOME TO SERVER...!");
+});
+
 app.use('/', authRoutes);
 
 // Server listening
 app.listen(process.env.PORT || 8090, async () => {
-    try {
-        await authRoutes.connect;
-        console.log("connected to db");
-        console.log("Listining on port 9000");
-    } catch (error) {
-        console.log("Error:", error);
-    }
+  try {
+    await connection;
+    console.log("connected to db");
+    console.log(`Listining on port ${process.env.PORT}`);
+  } catch (error) {
+    console.log("Error:", error);
+  }
 });
