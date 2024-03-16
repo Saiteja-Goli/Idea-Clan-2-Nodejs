@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
-const secretKey = 'ideaclan1234';
 const User = require('../models/user.model');
-require("dotenv").config()
+require("dotenv").config();
 
 const verifyToken = async (req, res, next) => {
   try {
@@ -20,11 +19,10 @@ const verifyToken = async (req, res, next) => {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
-
       req.user = {
         id: user._id,
         email: user.email,
-        role: user.role // Make sure the user's role is attached to the req.user object
+        role: user.role
       };
       next();
     });

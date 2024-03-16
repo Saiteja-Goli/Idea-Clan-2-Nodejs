@@ -1,28 +1,43 @@
 const express = require('express');
 require('dotenv').config();
-const authRoutes = require("./src/routes/userRoutes");
-const postRoutes = require("./src/routes/postRoutes");
 const { connection } = require("./src/configs/db");
 
-const app = express();
+const { ApolloServer } = require('apollo-server-express');
+const { userTypeDefs } = require('./src/GraphQL/user.typeDefs');
+const { userResolvers } = require('./src/GraphQL/user.resolvers');
 
-app.use(express.json());
+const { postTypeDefs } = require('./src/GraphQL/posts.typeDefs');
+const { postResolvers } = require('./src/GraphQL/posts.resolvers');
 
-// Routes
-app.get("/", (req, res) => {
-  res.send("WELCOME TO SERVER...!");
-});
 
-app.use('/', authRoutes);
-app.use('/', postRoutes);
+require('dotenv').config();
 
-// Server listening
-app.listen(process.env.PORT || 8090, async () => {
-  try {
-    await connection;
-    console.log("connected to db");
-    console.log(`Listining on port ${process.env.PORT}`);
-  } catch (error) {
-    console.log("Error:", error);
-  }
-});
+async function startServer() {
+  const app = express();
+  const server = new ApolloServer(
+    {
+      typeDefs: [userTypeDefs, postTypeDefs],
+      resolvers: [userResolvers, postResolvers],
+      context: ({ req }) => ({ req })
+    }
+  );
+  await server.start();
+
+  server.applyMiddleware({ app });
+
+  app.get('/', (req, res) => {
+    res.send('WELCOME TO SERVER...!');
+  });
+
+  app.listen(process.env.PORT || 8090, async () => {
+    try {
+      await connection;
+      console.log('Connected to MongoDB');
+      console.log(`Listening on port ${process.env.PORT || 8090}`);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+}
+
+startServer();
