@@ -33,7 +33,6 @@ const postResolvers = {
         if (!token) {
           throw new Error("Token not provided.");
         }
-
         const decoded = jwt.verify(token, process.env.SECRET_KEY);
         if (!decoded) {
           throw new Error("Invalid token.");
