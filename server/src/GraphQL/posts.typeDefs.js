@@ -5,7 +5,6 @@ const postTypeDefs = gql`
     id: ID!
     user: ID!
     content: String!
-    createdAt: String!
   }
 
   type Query {

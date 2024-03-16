@@ -16,11 +16,7 @@ type User {
     accessToken: String
   }
 
-  type Query {
-    getUserById(id: ID!): User
-    getAllUsers: [User]
-  }
-  
+
   type Mutation {
     registerUser(name: String!, email: String!, username: String!, password: String!): AuthPayload
     loginUser(email: String!, password: String!): AuthPayload

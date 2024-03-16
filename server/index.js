@@ -5,7 +5,6 @@ const { connection } = require("./src/configs/db");
 const { ApolloServer } = require('apollo-server-express');
 const { userTypeDefs } = require('./src/GraphQL/user.typeDefs');
 const { userResolvers } = require('./src/GraphQL/user.resolvers');
-
 const { postTypeDefs } = require('./src/GraphQL/posts.typeDefs');
 const { postResolvers } = require('./src/GraphQL/posts.resolvers');
 
