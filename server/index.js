@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const authRoutes = require("./src/routes/userRoutes");
+const postRoutes = require("./src/routes/postRoutes");
 const { connection } = require("./src/configs/db");
 
 const app = express();
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.use('/', authRoutes);
+app.use('/', postRoutes);
 
 // Server listening
 app.listen(process.env.PORT || 8090, async () => {
