@@ -65,7 +65,7 @@ Access the server at :- http://localhost:9000/
 **Access the GraphQL endpoint in your browser or client application**
 
 **GraphQL Endpoint** : http://localhost:9000/graphql
-**Deployed Link** : https://idea-clan-2-nodejs.onrender.com/graphql
+
 Use this endpoint to interact with the GraphQL server, execute queries, and perform mutations.
 
 
