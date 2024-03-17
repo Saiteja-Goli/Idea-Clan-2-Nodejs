@@ -100,6 +100,14 @@ mutation {
 }
 
 ```
+## Authorization Header for Posting and Retrieving Posts
+
+After logging in and receiving the token, use the generated token for authorization by adding it to the headers as follows:
+
+- **Key**: Authorization
+- **Value**: Bearer ${Token}
+
+This authorization header should be included when making requests to post new content or retrieve posts for authenticated users.
 
 ### Post Operations
 
@@ -122,6 +130,8 @@ query {
   }
 }
 ```
+
+
 
 ## Technologies Used
 
