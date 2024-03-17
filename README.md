@@ -16,7 +16,7 @@ This Project contains a Node.js application using Express and Apollo Server for 
 ### Post Management
 - **Create Post (Authenticated)** : Authenticated users can create posts. Only logged-in users can create posts, and posts are associated with the user who created them.
 
--**Get User Posts (Authenticated)** : Authenticated users can retrieve their own posts. Only posts belonging to the logged-in user are returned.
+- **Get User Posts (Authenticated)** : Authenticated users can retrieve their own posts. Only posts belonging to the logged-in user are returned.
 
 
 ## Project Structure
@@ -37,16 +37,14 @@ This Project contains a Node.js application using Express and Apollo Server for 
 ## Setup
 
 1. **Clone the repository** 
-
-   ```bash
-    git clone https://github.com/Saiteja-Goli/Idea-Clan-2-Nodejs
-    ```
+```bash
+  git clone https://github.com/Saiteja-Goli/Idea-Clan-2-Nodejs
+```
 2. **Install dependencies**
- ```bash
-    cd server
-
-    npm install
-   ```
+```bash
+  cd server
+  npm install
+```
 
 3. **Set up environment variables** 
 Create a .env file with the following variables:
@@ -66,8 +64,8 @@ Access the server at :- http://localhost:9000/
 ## GraphQL Endpoint
 **Access the GraphQL endpoint in your browser or client application**
 
-GraphQL Endpoint: http://localhost:9000/graphql
-Deployed Link : https://idea-clan-2-nodejs.onrender.com/graphql
+**GraphQL Endpoint** : http://localhost:9000/graphql
+**Deployed Link** : https://idea-clan-2-nodejs.onrender.com/graphql
 Use this endpoint to interact with the GraphQL server, execute queries, and perform mutations.
 
 
