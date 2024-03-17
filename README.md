@@ -3,6 +3,10 @@
 This Project contains a Node.js application using Express and Apollo Server for GraphQL API implementation. It includes user registration and login functionality with MongoDB database integration.
 
 
+## Deployed-Link
+[link](https://idea-clan-2-nodejs.onrender.com/)
+
+
 ## Functionalities
 ### User Authentication
 - **User Registration** : Users can register with a email, name, username, and password.
@@ -56,7 +60,6 @@ MONGODB_URL = your_mongodb_uri
 4. **Start the server**
 ```bash
 npm start
-
 Access the server at :- http://localhost:9000/
 ```
 
@@ -64,6 +67,7 @@ Access the server at :- http://localhost:9000/
 **Access the GraphQL endpoint in your browser or client application**
 
 GraphQL Endpoint: http://localhost:9000/graphql
+Deployed Link : https://idea-clan-2-nodejs.onrender.com/graphql
 Use this endpoint to interact with the GraphQL server, execute queries, and perform mutations.
 
 
