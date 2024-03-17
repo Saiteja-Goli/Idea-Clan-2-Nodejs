@@ -15,6 +15,21 @@ This Project contains a Node.js application using Express and Apollo Server for 
 -**Get User Posts (Authenticated)** : Authenticated users can retrieve their own posts. Only posts belonging to the logged-in user are returned.
 
 
+## Project Structure
+- src/
+  - configs/
+    - db.js: MongoDB connection configuration.
+  - GraphQL/
+    - user.typeDefs.js: GraphQL type definitions for user operations.
+    - user.resolvers.js: Resolvers for user operations.
+    - posts.typeDefs.js: GraphQL type definitions for post operations.
+    - posts.resolvers.js: Resolvers for post operations.
+  - models/
+    - user.model.js: Mongoose model for User schema.
+    - post.model.js: Mongoose model for Post schema.
+  - index.js: Entry point for the server.
+
+
 ## Setup
 
 1. **Clone the repository** 
@@ -32,7 +47,7 @@ This Project contains a Node.js application using Express and Apollo Server for 
 3. **Set up environment variables** 
 Create a .env file with the following variables:
 ```bash
-PORT = 8090
+PORT = 9000
 
 SECRET_KEY = your_secret_key
 
@@ -42,8 +57,15 @@ MONGODB_URL = your_mongodb_uri
 ```bash
 npm start
 
-Access the server at :- http://localhost:8090/
+Access the server at :- http://localhost:9000/
 ```
+
+## GraphQL Endpoint
+**Access the GraphQL endpoint in your browser or client application**
+
+GraphQL Endpoint: http://localhost:9000/graphql
+Use this endpoint to interact with the GraphQL server, execute queries, and perform mutations.
+
 
 ## Usage
 ### User Operations
@@ -82,7 +104,7 @@ mutation {
 - **createPost**
 ```bash
 mutation {
-  createPost(content: "Post 4 by User Sai1 ") {
+  createPost(content: "String!") {
     id
     content
   }
