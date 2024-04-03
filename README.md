@@ -57,22 +57,7 @@ MONGODB_URL = your_mongodb_uri
 ```
 4. **Start the server**
 ```bash
-PORT=9000
-SESSION_SECRET=SAI0407
-
-GOOGLE_CLIENT_ID=1066004373746-gtg3otdn0eb7t9jr124l7qe4phpg5q1b.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=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
-GOOGLE_REDIRECT_URI=http://localhost:9000/auth/google/callback
-
-OUTLOOK_CLIENT_ID=b0931c41-93ba-47b4-bf25-f0c356596d5d
-OUTLOOK_CLIENT_SECRET=czg8Q~gaJOvloqnx-kzN5JlAbjUANvyMFoJZecp3
-OUTLOOK_TENANT_ID=f8cdef31-a31e-4b4a-93e4-5f571e91255a
-OUTLOOK_REDIRECT_URI=http://localhost:9000/auth/outlook/callback
-
-GEMINI_API_KEY=AIzaSyBqWPT_C92somaFXwp7JgZ-JpZUJ9cn8lc
-
-GMAIL_ADDRESS=saitejagoli666@gmail.com
-GMAIL_PASSWORD=ealohtcvtikmwdfu
+npm start
 
 ```
 
